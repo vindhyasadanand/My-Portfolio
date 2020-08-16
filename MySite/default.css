@@ -5,6 +5,7 @@
   --mainText: black;
   --secondaryText: #4b4156;
   --borderColor: #c1c1c1;
+  --themeDotBorder: #24292e;
 }
 
 html,
@@ -87,24 +88,107 @@ ul {
   box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 3em 30em;
+
   grid-template-areas:
     "nav-wrapper nav-wrapper"
     "left-column right-column";
 }
 .nav-wrapper {
+  border-radius: 5px 5px 0 0;
   grid-area: nav-wrapper;
   border-bottom: 1px solid var(--borderColor);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--mainColor);
 }
 .left-column {
   grid-area: left-column;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+#profile_pic {
+  display: block;
+  margin: 0 auto;
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  border: 2px solid var(--borderColor);
+}
+#theme-option-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.theme-dot {
+  height: 30px;
+  width: 30px;
+  background-color: black;
+  border: 2px solid var(--themeDotBorder);
+  border-radius: 50%;
+  -webkit-box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+  margin: 5px;
+}
+#light-mode {
+  background-color: #fff;
+}
+#blue-mode {
+  background-color: #192734;
+}
+#green-mode {
+  background-color: #78866b;
+}
+
+#purple-mode {
+  background-color: #7e4c72;
+}
+#settings-note {
+  font-size: 20px;
+  font-style: italic;
+  text-align: center;
+}
+.theme-dot:hover {
+  border-width: 5px;
 }
 .right-column {
   grid-area: right-column;
 }
+#navigation {
+  margin: 0;
+  padding: 10px;
+}
+#navigation li {
+  display: inline-block;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.dots-wrapper {
+  display: flex;
+  padding: 10px;
+}
+#dot-1 {
+  background-color: #fc6058;
+}
+#dot-2 {
+  background-color: #fec02f;
+}
+#dot-3 {
+  background-color: #2aca3e;
+}
+.browser-dot {
+  background-color: black;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  margin: 5px;
+
+  -webkit-box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
+}
+
 @media screen and(max-width:1200px) {
   .main-container {
     width: 95%;
